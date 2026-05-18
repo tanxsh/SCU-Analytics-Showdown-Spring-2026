@@ -6,7 +6,7 @@ Every growing season, Good Nature Agro (GNA) extends agricultural input loans â€
 
 But **23.3% of farmers never sell back**. They take the inputs and disappear.
 
-This project answers the question GNA faces every season: **which farmers will we lose â€” and what can we do about it before it's too late?**
+This project answers the question GNA faces every season: **which farmers will we lose and what can we do about it before it's too late?**
 
 ---
 
