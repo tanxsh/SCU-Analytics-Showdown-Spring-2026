@@ -59,8 +59,7 @@ Farmers are assigned to one of three risk tiers based on their expected yield:
 │   └── 03_Risk_Identification.ipynb            ← Risk tier assignment & profiling
 │
 ├── Presentation/
-│   ├── Roots & Returns Presentation.pdf        ← Final Presentation PDF
-│
+│   └── Roots & Returns Presentation.pdf        ← Final Presentation PDF
 │
 ├── Python Scripts/
 │   ├── data_feature_engineering.py             ← Full feature engineering pipeline
