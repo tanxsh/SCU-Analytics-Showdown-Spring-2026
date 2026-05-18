@@ -72,7 +72,6 @@ By flagging the top 27% of farmers by risk, the model catches **74% of all non-s
 ## Tools & Technologies
 
 - **Python** — pandas, numpy, XGBoost, scikit-learn, SHAP, matplotlib
-- **Deployed App** — [Good Nature Agro Farmer Risk Assessment Tool](https://github.com/tanxsh/gna-risk-tool)
 
 ---
 
