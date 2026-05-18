@@ -1,10 +1,8 @@
-# 🌱 Roots & Returns — SCU Analytics Showdown, Spring 2026
-
-> **🏆 Winner — SCU Leavey School of Business Analytics Showdown, Spring 2026**
+> **🏆 Winner — SCU Analytics Showdown, Spring 2026**
 
 ---
 
-## The Story
+## Roots & Returns — The Story
 
 Every growing season, Good Nature Agro (GNA) extends agricultural input loans — seeds, fungicide, fertilizer — to thousands of smallholder farmers across Zambia. In return, farmers are expected to sell their harvest back to GNA at the end of the season.
 
