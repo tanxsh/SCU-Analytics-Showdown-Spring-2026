@@ -12,9 +12,9 @@ GNA extends agricultural inputs (seeds, fungicide, fertilizer) on credit to smal
 
 ---
 
-## Our Approach
+## Approach
 
-We built a **two-stage XGBoost hurdle model**:
+Built a **two-stage XGBoost hurdle model**:
 
 - **Stage 1 — Classifier**: Predicts the probability a farmer will sell back (AUC: 0.880)
 - **Stage 2 — Regressor**: Predicts yield in kg for farmers who do sell back (RMSE: 594 kg)
@@ -83,5 +83,3 @@ By flagging the top 27% of farmers by risk, the model catches **74% of all non-s
 3. Run notebooks in order: `00` → `01` → `02` → `03`
 
 ---
-
-*SCU Leavey School of Business · Group 9 · Spring 2026*
