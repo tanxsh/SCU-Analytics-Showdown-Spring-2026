@@ -80,13 +80,9 @@ Farmers are assigned to one of three risk tiers based on their expected yield:
     └── 01–15 publication-ready plots
 ```
 
----
-
 > **Note:** The `Datasets/` folder is not included in this repository due to data privacy. 
 
----
-
-## Stack
+## Tech Stack
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![XGBoost](https://img.shields.io/badge/XGBoost-2.0.3-orange)
