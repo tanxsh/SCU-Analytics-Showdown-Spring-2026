@@ -31,7 +31,7 @@ Farmers are assigned to one of three risk tiers based on their expected yield:
 |------|---------------|----------------------|--------|
 | 🔴 **HIGH** | ≤ 83 kg | 54.5% | Immediate intervention |
 | 🟠 **MEDIUM** | 84 – 216 kg | 11.7% | Monitor and support |
-| 🟢 **LOW** | > 216 kg | 3.9% | Portfolio-reliable |
+| 🟢 **LOW** | > 216 kg | 3.9% | Reliable |
 
 > By flagging just the top 27% of farmers by risk, the model catches **74% of all non-sellers**.
 
