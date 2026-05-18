@@ -2,7 +2,7 @@
 
 ## Roots & Returns — The Story
 
-Every growing season, Good Nature Agro (GNA) extends agricultural input loans — seeds, fungicide, fertilizer — to thousands of smallholder farmers across Zambia. In return, farmers are expected to sell their harvest back to GNA at the end of the season.
+Every growing season, Good Nature Agro (GNA) extends agricultural input loans — seeds, fungicide, fertilizer, to thousands of smallholder farmers across Zambia. In return, farmers are expected to sell their harvest back to GNA at the end of the season.
 
 But **23.3% of farmers never sell back**. They take the inputs and disappear.
 
@@ -12,7 +12,7 @@ This project answers the question GNA faces every season: **which farmers will w
 
 ## The Model
 
-We built a **two-stage XGBoost hurdle model** that separates the problem into two distinct questions:
+Built a **two-stage XGBoost hurdle model** that separates the problem into two distinct questions:
 
 ```
 Stage 1: Will this farmer sell back at all?     → XGBoost Classifier  (AUC: 0.880)
@@ -49,14 +49,6 @@ Farmers are assigned to one of three risk tiers based on their expected yield:
 
 ---
 
-## Live Demo
-
-We deployed the model as an interactive web app — any field officer can enter a farmer's details and get a real-time risk tier prediction.
-
-🔗 **[Good Nature Agro Farmer Risk Assessment Tool](https://github.com/tanxsh/gna-risk-tool)**
-
----
-
 ## Repository Structure
 
 ```
@@ -87,17 +79,7 @@ We deployed the model as an interactive web app — any field officer can enter 
 
 ---
 
-## How to Run
-
-> **Note:** The `Datasets/` folder is not included in this repository due to data privacy. You will need the original GNA dataset to re-run the notebooks.
-
-1. Clone the repository
-2. Place the `Datasets/` folder in the same root directory
-3. Run notebooks in order:
-
-```
-00_Data_Preparation → 01_Predictive_Model → 02_Yield_Prediction → 03_Risk_Identification
-```
+> **Note:** The `Datasets/` folder is not included in this repository due to data privacy. 
 
 ---
 
@@ -111,5 +93,3 @@ We deployed the model as an interactive web app — any field officer can enter 
 `pandas` · `numpy` · `scikit-learn` · `matplotlib` · `XGBoost` · `SHAP` · `Streamlit`
 
 ---
-
-*SCU Leavey School of Business · Group 9 · Spring 2026*
