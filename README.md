@@ -58,6 +58,10 @@ Farmers are assigned to one of three risk tiers based on their expected yield:
 │   ├── 02_Yield_Prediction_Input_Effectiveness ← SHAP analysis & input effectiveness
 │   └── 03_Risk_Identification.ipynb            ← Risk tier assignment & profiling
 │
+├── Presentation/
+│   ├── Roots & Returns Presentation.pdf        ← Final Presentation PDF
+│
+│
 ├── Python Scripts/
 │   ├── data_feature_engineering.py             ← Full feature engineering pipeline
 │   ├── two_stage_hurdle_risk_model.py          ← Two-stage model implementation
