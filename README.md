@@ -1,4 +1,4 @@
-# **🥇Competition Winner — SCU Leavey School of Business Analytics Showdown (Spring 2026)**
+# **🥇Competition Winner — SCU Analytics Showdown (Spring 2026)**
 
 ### Roots & Returns - SCU Analytics Showdown Spring 2026
 
