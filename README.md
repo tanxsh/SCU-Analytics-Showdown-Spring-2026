@@ -1,6 +1,6 @@
-# Roots & Returns — SCU Analytics Showdown, Spring 2026
+**Competition Winner — SCU Leavey School of Business Analytics Showdown (Spring 2026)**
 
-**Winner — SCU Leavey School of Business Analytics Showdown (Spring 2026)**
+# Roots & Returns - SCU Analytics Showdown Spring 2026
 
 A data science competition project analyzing farmer non-seller risk for **Good Nature Agro (GNA)**, an agricultural input loan company operating across Zambia. The goal was to predict which farmers would not sell their harvest back to GNA and translate that into actionable business recommendations.
 
