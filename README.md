@@ -1,32 +1,63 @@
-# **🥇Competition Winner — SCU Analytics Showdown (Spring 2026)**
+# 🌱 Roots & Returns — SCU Analytics Showdown, Spring 2026
 
-A data science competition project analyzing farmer non-seller risk for **Good Nature Agro (GNA)**, an agricultural input loan company operating across Zambia. The goal was to predict which farmers would not sell their harvest back to GNA and translate that into actionable business recommendations.
-
----
-
-## The Problem
-
-GNA extends agricultural inputs (seeds, fungicide, fertilizer) on credit to smallholder farmers across Zambia. A **non-seller** is a farmer who takes the loan but does not sell their harvest back to GNA — representing both a financial loss and a missed development opportunity. 23.3% of farmers in the 2024/25 season were non-sellers.
+> **🏆 Winner — SCU Leavey School of Business Analytics Showdown, Spring 2026**
 
 ---
 
-## Approach
+## The Story
 
-Built a **two-stage XGBoost hurdle model**:
+Every growing season, Good Nature Agro (GNA) extends agricultural input loans — seeds, fungicide, fertilizer — to thousands of smallholder farmers across Zambia. In return, farmers are expected to sell their harvest back to GNA at the end of the season.
 
-- **Stage 1 — Classifier**: Predicts the probability a farmer will sell back (AUC: 0.880)
-- **Stage 2 — Regressor**: Predicts yield in kg for farmers who do sell back (RMSE: 594 kg)
-- **Expected Yield** = P(sells back) × E[yield | sells back]
+But **23.3% of farmers never sell back**. They take the inputs and disappear.
 
-Farmers are segmented into three risk tiers based on expected yield:
+This project answers the question GNA faces every season: **which farmers will we lose — and what can we do about it before it's too late?**
 
-| Tier | Expected Yield | Actual Non-Seller Rate |
-|------|---------------|----------------------|
-| 🔴 HIGH | ≤ 83 kg | 54.5% |
-| 🟠 MEDIUM | 84 – 216 kg | 11.7% |
-| 🟢 LOW | > 216 kg | 3.9% |
+---
 
-By flagging the top 27% of farmers by risk, the model catches **74% of all non-sellers**.
+## The Model
+
+We built a **two-stage XGBoost hurdle model** that separates the problem into two distinct questions:
+
+```
+Stage 1: Will this farmer sell back at all?     → XGBoost Classifier  (AUC: 0.880)
+Stage 2: If they do sell back, how much?        → XGBoost Regressor   (RMSE: 594 kg)
+
+Expected Yield = P(sells back) × E[yield | sells back]
+```
+
+This architecture handles the 23.3% zero-yield non-sellers that break a standard regression model.
+
+### Risk Tiers
+
+Farmers are assigned to one of three risk tiers based on their expected yield:
+
+| Tier | Expected Yield | Actual Non-Seller Rate | Action |
+|------|---------------|----------------------|--------|
+| 🔴 **HIGH** | ≤ 83 kg | 54.5% | Immediate intervention |
+| 🟠 **MEDIUM** | 84 – 216 kg | 11.7% | Monitor and support |
+| 🟢 **LOW** | > 216 kg | 3.9% | Portfolio-reliable |
+
+> By flagging just the top 27% of farmers by risk, the model catches **74% of all non-sellers**.
+
+---
+
+## Key Findings
+
+| # | Insight | Impact |
+|---|---------|--------|
+| 1 | Season 1 farmers have a **27.7% dropout rate** — 20× higher than Season 6+ farmers | Prioritise early-season outreach for first-timers |
+| 2 | **Fungicide** is the #1 controllable yield driver — Soy Bean farmers with fungicide yield 463 kg vs 160 kg without | Expand fungicide access; 69% of Soy Bean farmers don't receive it |
+| 3 | **Western and Southern regions** have 50%+ non-seller rates — drought-impacted crisis zones | Region-specific intervention strategies needed |
+| 4 | **Partnership Programme** farmers have 57% non-seller rate and 0% fungicide adoption | Pairing with even one additional input is the highest-leverage investment |
+| 5 | HIGH-risk tier flagging recovers an estimated **ZMW 2.3M** in at-risk procurement per season | Direct financial case for proactive risk management |
+
+---
+
+## Live Demo
+
+We deployed the model as an interactive web app — any field officer can enter a farmer's details and get a real-time risk tier prediction.
+
+🔗 **[Good Nature Agro Farmer Risk Assessment Tool](https://github.com/tanxsh/gna-risk-tool)**
 
 ---
 
@@ -34,49 +65,55 @@ By flagging the top 27% of farmers by risk, the model catches **74% of all non-s
 
 ```
 ├── Jupyter Notebooks/
-│   ├── 00_Data_Preparation.ipynb
-│   ├── 01_Predictive_Model.ipynb
-│   ├── 02_Yield_Prediction_Input_Effectiveness.ipynb
-│   └── 03_Risk_Identification.ipynb
+│   ├── 00_Data_Preparation.ipynb               ← Feature engineering & dataset construction
+│   ├── 01_Predictive_Model.ipynb               ← Model selection, training & validation
+│   ├── 02_Yield_Prediction_Input_Effectiveness ← SHAP analysis & input effectiveness
+│   └── 03_Risk_Identification.ipynb            ← Risk tier assignment & profiling
+│
 ├── Python Scripts/
-│   ├── data_feature_engineering.py
-│   ├── two_stage_hurdle_risk_model.py
-│   ├── xgboost_hyperparameter_tuning.py
-│   ├── shap_input_importance_analysis.py
-│   ├── model_selection_benchmark.py
-│   ├── model_validation_and_narrative.py
-│   ├── farmer_tenure_and_fungicide_simulation.py
-│   └── advanced_analytics_and_scorecard.py
+│   ├── data_feature_engineering.py             ← Full feature engineering pipeline
+│   ├── two_stage_hurdle_risk_model.py          ← Two-stage model implementation
+│   ├── xgboost_hyperparameter_tuning.py        ← Bayesian hyperparameter search
+│   ├── shap_input_importance_analysis.py       ← SHAP value computation
+│   ├── model_selection_benchmark.py            ← 7-model benchmark comparison
+│   ├── model_validation_and_narrative.py       ← Validation & business narrative
+│   ├── farmer_tenure_and_fungicide_simulation  ← Tenure analysis & simulations
+│   └── advanced_analytics_and_scorecard.py     ← Operational scorecard
+│
 ├── JSON Files/
-│   ├── best_xgb_params.json
-│   ├── stage1_params.json
-│   └── stage2_params.json
+│   ├── best_xgb_params.json                    ← Tuned XGBoost hyperparameters
+│   ├── stage1_params.json                      ← Stage 1 classifier params
+│   └── stage2_params.json                      ← Stage 2 regressor params
+│
 └── Visualizations/
     └── 01–15 publication-ready plots
 ```
 
 ---
 
-## Key Findings
-
-- **Fungicide** is the #1 controllable driver of yield — Soy Bean farmers with fungicide yield 463 kg vs 160 kg without
-- **Season 1 farmers** have a 27.7% dropout rate — the highest-risk cohort by far
-- **Western and Southern regions** are crisis zones with 50%+ non-seller rates
-- **Partnership Programme** farmers are the most vulnerable cohort — 57% non-seller rate, 0% fungicide adoption
-- Flagging the HIGH-risk tier alone recovers an estimated **ZMW 2.3M** in at-risk procurement per season
-
----
-
-## Tools & Technologies
-
-- **Python** — pandas, numpy, XGBoost, scikit-learn, SHAP, matplotlib
-
----
-
 ## How to Run
 
+> **Note:** The `Datasets/` folder is not included in this repository due to data privacy. You will need the original GNA dataset to re-run the notebooks.
+
 1. Clone the repository
-2. Upload all folders to the same directory (Datasets folder required separately — not included due to data privacy)
-3. Run notebooks in order: `00` → `01` → `02` → `03`
+2. Place the `Datasets/` folder in the same root directory
+3. Run notebooks in order:
+
+```
+00_Data_Preparation → 01_Predictive_Model → 02_Yield_Prediction → 03_Risk_Identification
+```
 
 ---
+
+## Stack
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![XGBoost](https://img.shields.io/badge/XGBoost-2.0.3-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.35.0-red)
+![SHAP](https://img.shields.io/badge/SHAP-Explainability-green)
+
+`pandas` · `numpy` · `scikit-learn` · `matplotlib` · `XGBoost` · `SHAP` · `Streamlit`
+
+---
+
+*SCU Leavey School of Business · Group 9 · Spring 2026*
