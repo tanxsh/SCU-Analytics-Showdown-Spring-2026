@@ -53,14 +53,8 @@ By flagging the top 27% of farmers by risk, the model catches **74% of all non-s
 │   ├── best_xgb_params.json
 │   ├── stage1_params.json
 │   └── stage2_params.json
-├── Visualizations/
-│   └── 01–15 publication-ready plots
-├── Presentation/
-│   └── SCU Analytics Showdown.pdf
-├── Documentation/
-│   └── README (File Execution Info).pdf
-└── Challenge Overview/
-    └── GNA-Challenge Context.pdf
+└── Visualizations/
+    └── 01–15 publication-ready plots
 ```
 
 ---
@@ -87,8 +81,6 @@ By flagging the top 27% of farmers by risk, the model catches **74% of all non-s
 1. Clone the repository
 2. Upload all folders to the same directory (Datasets folder required separately — not included due to data privacy)
 3. Run notebooks in order: `00` → `01` → `02` → `03`
-
-See `Documentation/README (File Execution Info).pdf` for detailed instructions.
 
 ---
 
