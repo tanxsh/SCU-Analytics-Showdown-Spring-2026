@@ -1,4 +1,4 @@
-> **🏆 Winner — SCU Analytics Showdown, Spring 2026**
+# **🏆 Winner — SCU Analytics Showdown, Spring 2026**
 
 ---
 
