@@ -1,0 +1,7 @@
+Datasets/
+~$*
+.DS_Store
+**/.DS_Store
+.Rhistory
+.claude/
+GNA Risk Tool/

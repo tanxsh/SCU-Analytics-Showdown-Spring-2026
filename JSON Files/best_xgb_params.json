@@ -1,0 +1,18 @@
+{
+  "max_depth": 8,
+  "min_child_weight": 6,
+  "gamma": 1.7368117998475943,
+  "subsample": 0.953490467628233,
+  "colsample_bytree": 0.4934020838486861,
+  "colsample_bylevel": 0.9122183966666277,
+  "colsample_bynode": 0.756768050304281,
+  "reg_alpha": 5.948204745503425e-05,
+  "reg_lambda": 0.0007518635374085925,
+  "learning_rate": 0.02511258501435187,
+  "n_estimators": 282,
+  "tree_method": "hist",
+  "enable_categorical": true,
+  "random_state": 42,
+  "verbosity": 0,
+  "n_jobs": -1
+}

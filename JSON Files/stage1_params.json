@@ -1,0 +1,21 @@
+{
+  "max_depth": 8,
+  "min_child_weight": 10,
+  "gamma": 0.8273412831599638,
+  "subsample": 0.7482319310263774,
+  "colsample_bytree": 0.8053575560207048,
+  "colsample_bylevel": 0.78127643588201,
+  "colsample_bynode": 0.5924465552375279,
+  "reg_alpha": 0.0008638245103112186,
+  "reg_lambda": 0.000806519569255163,
+  "learning_rate": 0.02476086831092025,
+  "n_estimators": 257,
+  "scale_pos_weight": 3.300913589645984,
+  "objective": "binary:logistic",
+  "eval_metric": "auc",
+  "tree_method": "hist",
+  "enable_categorical": true,
+  "random_state": 42,
+  "verbosity": 0,
+  "n_jobs": -1
+}
